@@ -24,33 +24,35 @@ function App() {
     }
 
   return (
-    <div id="table">
-      <h2>ToDo List</h2>
-      <input type="text" placeholder="Enter your ToDo" value={table} onChange={(e)=>{
-        settable(e.target.value)
-      }}/>
+      <center>
+            <div id="table">
+              <h2>ToDo List</h2>
+              <input type="text" placeholder="Enter your ToDo" value={table} onChange={(e)=>{
+                settable(e.target.value)
+              }}/>
 
-      <button onClick={()=>{
-        let newList=[...list]
-        if (table.trim().length>0){
-        newList.push(table)
-        setlist(newList)}
-        settable("")
-        }}> Enter </button>
+              <button onClick={()=>{
+                let newList=[...list]
+                if (table.trim().length>0){
+                newList.push(table)
+                setlist(newList)}
+                settable("")
+                }}> Enter </button>
 
-      {
-        list.map((item,index)=>{
-          return(
-            <div key={index}>
-              <h4>{item}</h4>
-              <button onClick={()=>{deleteItem(index)}}>Delete</button>
-              <button onClick={()=>{editItem(index)}}>Edit</button>
-              <button onClick={()=>{completeItem(index)}}>Complete</button>
-            </div>
-          )
-        })
-      }
-      </div>
+              {
+                list.map((item,index)=>{
+                  return(
+                    <div key={index}>
+                      <h4>{item}</h4>
+                      <button onClick={()=>{deleteItem(index)}}>Delete</button>
+                      <button onClick={()=>{editItem(index)}}>Edit</button>
+                      <button onClick={()=>{completeItem(index)}}>Complete</button>
+                    </div>
+                  )
+                })
+              }
+              </div>
+   </center>
   );
 }
 
