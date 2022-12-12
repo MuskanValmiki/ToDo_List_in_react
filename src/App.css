@@ -40,4 +40,6 @@
 #table{
   margin: auto;
   background-color: grey;
+  width: 20vw;
+  color: white;
 }
